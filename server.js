@@ -6,6 +6,9 @@ app.get('/', (req, res) => {//Create a Node response to a HTTP Get request at th
     res.send('Welcome to Data Representation & Querying!')
 })
 
+app.get('/hello/:name', (req, res) => {//Create another Node response to a HTTP Get request at the /hello Address of localHost, responding with a message
+    res.send('Hello ' + req.params.name)
+})
 
 app.listen(port, () => {//Create a Node HTTP Server and Specify the Port to listen with the 'port' Variable
     console.log(`Example app listening at http://localhost:${port}`)
