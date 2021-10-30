@@ -1,4 +1,5 @@
-const express = require('express') //Creates a variable of the node REQUIRE Function
+const express = require('express') //Creates a variable to Include Express with the node REQUIRE Function
+const pat = require('path') //Creates a variable to Include Path with the node REQUIRE Function
 const app = express() //Create an Express application and store as a Varaible
 const port = 3000 //Define a Port variable
 
@@ -31,6 +32,10 @@ app.get('/api/movies', (req, res) => {//Create another Node response to a HTTP G
         ]
     }
     res.json({ movies: myMovies })//Respond with Json Data
+})
+
+app.get('/test', (req, res) => {//Create another Node response to a HTTP Get request at the /test Address of localHost, responding with an HTML Page
+    res.sendFile(__dirname + '/index.html')//respond with the sendFile function
 })
 
 app.listen(port, () => {//Create a Node HTTP Server and Specify the Port to listen with the 'port' Variable
