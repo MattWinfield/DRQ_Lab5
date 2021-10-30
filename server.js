@@ -38,6 +38,10 @@ app.get('/test', (req, res) => {//Create another Node response to a HTTP Get req
     res.sendFile(__dirname + '/index.html')//respond with the sendFile function
 })
 
+app.get('/name', (req, res) => {//Create another Node response to a HTTP Get request at the /name Address of localHost, responding with an HTML Page
+    res.send('Hello ' + req.query.fname + ' ' + req.query.lname)//respond with the sendFile function
+})
+
 app.listen(port, () => {//Create a Node HTTP Server and Specify the Port to listen with the 'port' Variable
     console.log(`Example app listening at http://localhost:${port}`)
 })
